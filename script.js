@@ -1,6 +1,9 @@
 const canvas = document.querySelector('.main-canvas');
+let color = document.querySelector('#color');
 
 isClicked = false;
+
+console.dir(document.querySelector('input'));
 
 for (let i = 1; i <= 256; i++) {
     let pixel = document.createElement('div');
@@ -14,7 +17,7 @@ canvas.addEventListener('mousedown', function (e) {
 
 canvas.addEventListener('mousemove', function (e) {
     if (isClicked) {
-        e.target.style.background = 'green';
+        e.target.style.background = color.value;
     }
 })
 
