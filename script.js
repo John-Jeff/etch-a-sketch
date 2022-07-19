@@ -19,8 +19,14 @@ randomColorBtn.addEventListener('click', function () {
 
 canvas.addEventListener('mousedown', function (e) {
     isClicked = true;
+    if (isClicked) {
+        if (isRandomColor) {
+            e.target.style.background = randomColor();
+
+        } else e.target.style.background = color.value;
+    }
 })
-canvas.addEventListener('mousemove', function (e) {
+canvas.addEventListener('mouseover', function (e) {
     if (isClicked) {
         if (isRandomColor) {
             e.target.style.background = randomColor();
@@ -30,7 +36,6 @@ canvas.addEventListener('mousemove', function (e) {
 })
 canvas.addEventListener('mouseup', function (e) {
     isClicked = false;
-    isRandomColor = false;
 })
 
 function randomColor() {
