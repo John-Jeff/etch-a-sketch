@@ -7,6 +7,7 @@ const gridColumns = document.querySelector('#grid-columns');
 
 let isClicked = false;
 let isRandomColor = false;
+let isColor = false;
 
 // console.dir(document.querySelector('input'));
 
@@ -25,8 +26,14 @@ gridSize.addEventListener('mouseup', function (e) {
     setGridSize(gridSize.value);
 })
 
+color.addEventListener('click', function (e) {
+    isColor = true;
+    isRandomColor = false;
+})
+
 randomColorBtn.addEventListener('click', function (e) {
     isRandomColor = true;
+    isColor = false;
 })
 
 canvas.addEventListener('mousedown', function (e) {
@@ -35,7 +42,10 @@ canvas.addEventListener('mousedown', function (e) {
         if (isRandomColor) {
             e.target.style.background = randomColor();
 
-        } else e.target.style.background = color.value;
+        }
+        else {
+            e.target.style.background = color.value;
+        }
     }
 })
 canvas.addEventListener('mouseover', function (e) {
@@ -43,8 +53,14 @@ canvas.addEventListener('mouseover', function (e) {
         if (isRandomColor) {
             e.target.style.background = randomColor();
 
-        } else e.target.style.background = color.value;
+        }
+        else if (isColor) {
+            e.target.style.background = color.value;
+        }
+
+        else e.target.style.background = color.value;
     }
+
 })
 canvas.addEventListener('mouseup', function (e) {
     isClicked = false;

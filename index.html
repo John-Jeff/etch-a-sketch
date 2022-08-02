@@ -9,31 +9,40 @@
 </head>
 
 <body>
-    <h1>Etch-A-Sketch</h1>
-    <div class="container">
-        <div class="options">
-            <div>
-                <label for="color">color:</label>
-                <input id='color' type="color">
+    <div class="main-body">
+        <h1>Etch-A-Sketch</h1>
+        <div class="container">
+            <div class="options">
+                <div>
+                    <label for="color">Color</label>
+                    <input id='color' type="color">
+                </div>
+                <button id="random-color">Random Colors</button>
             </div>
-            <button id="random-color">Random Colors</button>
-        </div>
 
-        <div class="main-canvas">
+            <div class="main-canvas">
 
+            </div>
+            <div class="options">
+                <div class="grid-options">
+                    <label for="grid-size">Grid Size</label>
+                    <br>
+                    <input type="range" list="intervals" id="grid-size" min="16" step="16" max="64" value="16">
+                    <datalist id="intervals">
+                        <option value="16" label="16"></option>
+                        <option value="32" label="32"></option>
+                        <option value="48" label="48"></option>
+                        <option value="64" label="64"></option>
+                    </datalist>
+                    <div id="current-grid">
+                        <span id="grid-rows">16</span> x <span id="grid-columns">16</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="grid-options">
-        <label for="grid-size">Grid Size</label>
-        <input type="range" list="intervals" id="grid-size" min="16" step="16" max="64" value="16">
-        <datalist id="intervals">
-            <option value="16" label="16"></option>
-            <option value="32" label="32"></option>
-            <option value="48" label="48"></option>
-            <option value="64" label="64"></option>
-        </datalist>
-        <div>
-            <span id="grid-rows">16</span> x <span id="grid-columns">16</span>
+        <div class="bottom-row">
+            <div class="knob"></div>
+            <div class="knob"></div>
         </div>
     </div>
 </body>
