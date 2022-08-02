@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -108,4 +109,8 @@ h1 {
 #current-grid {
     font-size: 32px;
     margin-top: 16px;
+}
+
+footer {
+    margin: 26px 0 0 0;
 }
